@@ -1200,6 +1200,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
+--- !u!1 &1866117474 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6907243180960391067, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
+  m_PrefabInstance: {fileID: 6907243181681192697}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1866117478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1866117474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eef9cc5889d314b86881db5e9f80d237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2105713847 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6187682241481851106, guid: 938041b69959946e1ab028c4f709c629, type: 3}
@@ -1382,5 +1399,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ball
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6907243180960391071, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
