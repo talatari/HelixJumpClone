@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public enum SegmentType
@@ -12,7 +10,5 @@ public enum SegmentType
 
 public class Segment : MonoBehaviour
 {
-    [SerializeField] private SegmentType type;
-
-    
+    [SerializeField] public SegmentType type;
 }

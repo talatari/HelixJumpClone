@@ -1,18 +1,39 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class BallController : MonoBehaviour
+[RequireComponent(typeof(BallMovement))]
+public class BallController : OnColliderTrigger
 {
-    // Start is called before the first frame update
-    void Start()
+    private BallMovement _ballMovement;
+
+    private void Start()
     {
-        
+        _ballMovement = GetComponent<BallMovement>();
     }
 
-    // Update is called once per frame
-    void Update()
+    protected override void OnOneTriggerEnter(Collider other)
     {
-        
+        Segment _segment = other.GetComponent<Segment>();
+
+        if (_segment != null)
+        {
+            if (_segment.type == SegmentType.Empty)
+            {
+                Debug.Log($"other.transform.position.y = " +
+                          $"{other.transform.position.y}");
+
+                _ballMovement.Fall(other.transform.position.y);
+            }
+
+            if (_segment.type == SegmentType.Default)
+            {
+                _ballMovement.Jump();
+            }
+
+            if (_segment.type == SegmentType.Trap ||
+                _segment.type == SegmentType.Finish)
+            {
+                _ballMovement.Stop();
+            }
+        }
     }
 }

@@ -1,29 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(BallMovement))]
 public class BallMovement : MonoBehaviour
 {
-    [Header("Animation")]
     [Header("Fall")]
 
-    [SerializeField] private Animator _animator;
     [SerializeField] private float _fallHeight;
-    [SerializeField] private float _fallSpeed;
+    [SerializeField] private float _fallSpeedDefault;
+    [SerializeField] private float _fallSpeedMax;
+    [SerializeField] private float _fallSpeedAxeleration;
 
-
+    private Animator _animator;
     private float _floorY;
+    private float _fallSpeed;
 
     private void Start()
     {
         enabled = false;
+        _animator = GetComponent<Animator>();
     }
 
     private void Update()
     {
+
         if (transform.position.y > _floorY)
         {
-            transform.position += Vector3.down * _fallSpeed * Time.deltaTime;
+            //transform.position += Vector3.down *
+            //                      _fallSpeed * Time.deltaTime;
+
+            transform.Translate(0,
+                                -1 * _fallSpeedMax * Time.deltaTime,
+                                0);
+
+            if (_fallSpeed < _fallSpeedMax)
+            {
+                _fallSpeed += _fallSpeedAxeleration * Time.deltaTime;
+            }
         }
         else
         {
@@ -36,18 +48,21 @@ public class BallMovement : MonoBehaviour
 
     public void Jump()
     {
-
+        _animator.speed = 1;
+        _fallSpeed = _fallSpeedDefault;
     }
 
     public void Fall(float _startFloor)
     {
         _animator.speed = 0;
         enabled = true;
-        _floorY = transform.position.y - _fallHeight;
+        _floorY = _startFloor - _fallHeight;
+        Debug.Log($"_fallHeight = {_fallHeight}");
+        Debug.Log($"_floorY = {_floorY}");
     }
 
     public void Stop()
     {
-
+        _animator.speed = 0;
     }
 }

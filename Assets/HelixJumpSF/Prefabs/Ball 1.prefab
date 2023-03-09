@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 6907243180960391066}
   - component: {fileID: 6907243180960391069}
-  - component: {fileID: 6907243180960391071}
   - component: {fileID: 6907243180960391068}
+  - component: {fileID: 4351901396854569214}
+  - component: {fileID: 3088597902057553950}
   m_Layer: 0
   m_Name: Ball 1
   m_TagString: Untagged
@@ -56,18 +57,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &6907243180960391071
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6907243180960391067}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 09d16ec7225074bada4e2dd8e5be26b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!54 &6907243180960391068
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -84,6 +73,34 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &4351901396854569214
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907243180960391067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1061598623b2240e7a0b609b9c9716fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3088597902057553950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6907243180960391067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47decc8ae772e497ab8e394c531ca265, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fallHeight: 2.5
+  _fallSpeedDefault: 10
+  _fallSpeedMax: 25
+  _fallSpeedAxeleration: 25
 --- !u!1 &6907243181796066184
 GameObject:
   m_ObjectHideFlags: 0
