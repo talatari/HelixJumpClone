@@ -56,7 +56,8 @@ public class BallMovement : MonoBehaviour
     {
         _animator.speed = 0;
         enabled = true;
-        _floorY = _startFloor - _fallHeight;
+        //_floorY = _startFloor - _fallHeight;
+        _floorY = _fallHeight - _startFloor;
         Debug.Log($"_fallHeight = {_fallHeight}");
         Debug.Log($"_floorY = {_floorY}");
     }
