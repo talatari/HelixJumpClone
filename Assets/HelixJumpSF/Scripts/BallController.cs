@@ -9,16 +9,16 @@ public class BallController : OnColliderTrigger
     {
         _ballMovement = GetComponent<BallMovement>();
     }
-
-    protected override void OnOneTriggerEnter(Collider other)
+    
+    protected override void OnOneTriggerEnter(Collider _other)
     {
-        Segment _segment = other.GetComponent<Segment>();
+        Segment _segment = _other.GetComponent<Segment>();
 
         if (_segment != null)
         {
             if (_segment.Type == SegmentType.Empty)
             {
-                _ballMovement.Fall(other.transform.position.y);
+                _ballMovement.Fall(_other.transform.position.y);
             }
 
             if (_segment.Type == SegmentType.Default)

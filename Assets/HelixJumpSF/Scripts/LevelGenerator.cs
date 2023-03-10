@@ -8,12 +8,15 @@ public class LevelGenerator : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private int _defaultFloorAmount;
     [SerializeField] private float _floorHeight;
+    [SerializeField] private int _emptySegmentAmount;
+    [SerializeField] private int _minTrapSegment;
+    [SerializeField] private int _maxTrapSegment;
 
     private int _countLevel = 1;
-    private float _floorAmount;
+    private float _floorAmount = 0.0f;
     private string _floorName = "_Floor";
     public Transform _BALLTRANSFORM;
-    private float _indentPerFloor = 1.0f;
+    private float _indentPerFloor = 1.5f;
 
     private void Start()
     {
@@ -46,6 +49,24 @@ public class LevelGenerator : MonoBehaviour
             else
             {
                 _floor.name = $"{i}{_floorName}";
+            }
+
+            if (i == 0)
+            {
+                _floor.SetFinishAllSegments();
+            }
+
+            if (i > 0 && i < _floorAmount - 1)
+            {
+                _floor.SetRandomRotation();
+                _floor.AddEmptySegment(_emptySegmentAmount);
+                _floor.AddRandomTrapSegment(Random.Range(
+                    _minTrapSegment, _maxTrapSegment + 1));
+            }
+
+            if (i == _floorAmount - 1)
+            {
+                _floor.AddEmptySegment(_emptySegmentAmount);
             }
         }
     }
