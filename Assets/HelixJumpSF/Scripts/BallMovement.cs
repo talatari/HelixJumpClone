@@ -21,9 +21,6 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log($"transform.position.y = {transform.position.y}, " +
-                  $"_floorY = {_floorY}");
-
         if (transform.position.y > _floorY)
         {
             transform.Translate(0, -1 * _fallSpeedMax * Time.deltaTime, 0);

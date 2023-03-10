@@ -207,6 +207,7 @@ GameObject:
   m_Component:
   - component: {fileID: 502063384}
   - component: {fileID: 502063385}
+  - component: {fileID: 502063386}
   m_Layer: 0
   m_Name: Level
   m_TagString: Untagged
@@ -243,7 +244,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _mouseInputAxis: Mouse X
-  _sensitive: 5
+  _sensitive: 20
+--- !u!114 &502063386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502063383}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ded8fea00b3914a0c8389c4f5e3072df, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axis: {fileID: 263168364}
+  _floorPrefab: {fileID: -4034552659764470968, guid: 938041b69959946e1ab028c4f709c629, type: 3}
+  _defaultFloorAmount: 14
+  _floorHeight: 2
+  _emptySegmentAmount: 2
+  _minTrapSegment: 1
+  _maxTrapSegment: 3
+  _BALLTRANSFORM: {fileID: 1348098343}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -338,6 +359,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!4 &1348098343 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6907243180960391066, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
+  m_PrefabInstance: {fileID: 6907243181681192697}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6907243181681192697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -345,6 +371,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3088597902057553950, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
+      propertyPath: _fallHeight
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6907243180960391066, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -355,7 +385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6907243180960391066, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.01
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6907243180960391066, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_LocalPosition.z
@@ -392,6 +422,14 @@ PrefabInstance:
     - target: {fileID: 6907243180960391067, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907243180960391068, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
+      propertyPath: m_UseGravity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6907243180960391068, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
+      propertyPath: m_AngularDrag
+      value: 0.05
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
