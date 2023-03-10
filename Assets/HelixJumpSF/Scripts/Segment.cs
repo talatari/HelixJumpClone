@@ -10,5 +10,7 @@ public enum SegmentType
 
 public class Segment : MonoBehaviour
 {
-    [SerializeField] public SegmentType type;
+    [SerializeField] private SegmentType type;
+
+    public SegmentType Type => type;
 }

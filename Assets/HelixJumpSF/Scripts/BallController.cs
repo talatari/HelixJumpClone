@@ -16,18 +16,18 @@ public class BallController : OnColliderTrigger
 
         if (_segment != null)
         {
-            if (_segment.type == SegmentType.Empty)
+            if (_segment.Type == SegmentType.Empty)
             {
                 _ballMovement.Fall(other.transform.position.y);
             }
 
-            if (_segment.type == SegmentType.Default)
+            if (_segment.Type == SegmentType.Default)
             {
                 _ballMovement.Jump();
             }
 
-            if (_segment.type == SegmentType.Trap ||
-                _segment.type == SegmentType.Finish)
+            if (_segment.Type == SegmentType.Trap ||
+                _segment.Type == SegmentType.Finish)
             {
                 _ballMovement.Stop();
             }
