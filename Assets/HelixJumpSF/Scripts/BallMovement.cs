@@ -25,12 +25,7 @@ public class BallMovement : MonoBehaviour
 
         if (transform.position.y > _floorY)
         {
-            //transform.position += Vector3.down *
-            //                      _fallSpeed * Time.deltaTime;
-
-            transform.Translate(0,
-                                -1 * _fallSpeedMax * Time.deltaTime,
-                                0);
+            transform.Translate(0, -1 * _fallSpeedMax * Time.deltaTime, 0);
 
             if (_fallSpeed < _fallSpeedMax)
             {
@@ -56,10 +51,7 @@ public class BallMovement : MonoBehaviour
     {
         _animator.speed = 0;
         enabled = true;
-        //_floorY = _startFloor - _fallHeight;
-        _floorY = _fallHeight - _startFloor;
-        Debug.Log($"_fallHeight = {_fallHeight}");
-        Debug.Log($"_floorY = {_floorY}");
+        _floorY = _startFloor - _fallHeight;
     }
 
     public void Stop()

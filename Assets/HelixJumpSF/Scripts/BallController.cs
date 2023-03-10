@@ -18,9 +18,6 @@ public class BallController : OnColliderTrigger
         {
             if (_segment.type == SegmentType.Empty)
             {
-                Debug.Log($"other.transform.position.y = " +
-                          $"{other.transform.position.y}");
-
                 _ballMovement.Fall(other.transform.position.y);
             }
 
