@@ -4,7 +4,6 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     [Header("Fall")]
-
     [SerializeField] private float _fallHeight;
     [SerializeField] private float _fallSpeedDefault;
     [SerializeField] private float _fallSpeedMax;
@@ -22,6 +21,8 @@ public class BallMovement : MonoBehaviour
 
     private void Update()
     {
+        Debug.Log($"transform.position.y = {transform.position.y}, " +
+                  $"_floorY = {_floorY}");
 
         if (transform.position.y > _floorY)
         {
@@ -34,9 +35,9 @@ public class BallMovement : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(transform.position.x,
-                                             _floorY,
-                                             transform.position.z);
+            transform.position = new Vector3(
+                transform.position.x, _floorY, transform.position.z);
+
             enabled = false;
         }
     }
