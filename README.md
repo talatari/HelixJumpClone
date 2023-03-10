@@ -1,1 +1,1 @@
-# Clone Helix Jump Game
+# Клон известной игры Helix Jump
