@@ -3,7 +3,6 @@ using UnityEngine;
 [RequireComponent(typeof(BallMovement))]
 public class BallMovement : MonoBehaviour
 {
-    [Header("Fall")]
     [SerializeField] private float _fallHeight;
     [SerializeField] private float _fallSpeedDefault;
     [SerializeField] private float _fallSpeedMax;

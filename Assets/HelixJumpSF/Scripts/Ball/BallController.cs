@@ -1,8 +1,11 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(BallMovement))]
 public class BallController : OnColliderTrigger
 {
+    [HideInInspector] public UnityEvent<SegmentType> _collisionSegment;
+
     private BallMovement _ballMovement;
 
     private void Start()
@@ -31,6 +34,8 @@ public class BallController : OnColliderTrigger
             {
                 _ballMovement.Stop();
             }
+
+            _collisionSegment.Invoke(_segment.Type);
         }
     }
 }
