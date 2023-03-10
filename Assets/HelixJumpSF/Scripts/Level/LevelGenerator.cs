@@ -4,8 +4,6 @@ public class LevelGenerator : MonoBehaviour
 {
     [SerializeField] private Transform _axis;
     [SerializeField] private Floor _floorPrefab;
-
-    [Header("Settings")]
     [SerializeField] private int _defaultFloorAmount;
     [SerializeField] private float _floorHeight;
     [SerializeField] private int _emptySegmentAmount;
@@ -15,22 +13,13 @@ public class LevelGenerator : MonoBehaviour
     private int _countLevel = 1;
     private float _floorAmount = 0.0f;
     private string _floorName = "_Floor";
-    public Transform _BALLTRANSFORM;
-    private float _indentPerFloor = 1.5f;
-
-    private void Start()
-    {
-        GenerateLevel(_countLevel);
-    }
+    private float _lastFloorY = 0.0f;
+    public float _LastFloorY => _lastFloorY;
+    private float _indentPerFloor = 1.0f;
 
     public void GenerateLevel(int _countLevel)
     {
         DestroyChildFloors();
-
-        _BALLTRANSFORM.position = new Vector3(
-            _BALLTRANSFORM.position.x,
-            _defaultFloorAmount * _floorHeight + _floorHeight + _indentPerFloor,
-            _BALLTRANSFORM.position.z);
 
         _floorAmount = _defaultFloorAmount + _countLevel;
 
@@ -67,6 +56,7 @@ public class LevelGenerator : MonoBehaviour
             if (i == _floorAmount - 1)
             {
                 _floor.AddEmptySegment(_emptySegmentAmount);
+                _lastFloorY = _floor.transform.position.y + _indentPerFloor;
             }
         }
     }
