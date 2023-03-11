@@ -1,27 +1,54 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class LevelProgress : MonoBehaviour
+public class LevelProgress : BallEvents
 {
-    [SerializeField] private BallController _ballController;
-
     private int _currentLevel = 1;
     public int CurrentLevel => _currentLevel;
 
-    private void Start()
+    protected override void Awake()
     {
-        _ballController._collisionSegment.AddListener(OnBallCollisonSegment);
+        base.Awake();
+
+        LoadGameProgress();
     }
 
-    private void OnBallCollisonSegment(SegmentType _type)
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape) == true)
+        {
+            ResetGameProgress();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+
+    protected override void OnBallCollisionSegment(SegmentType _type)
     {
         if (_type == SegmentType.Finish)
         {
             _currentLevel++;
+            SaveGameProgress();
         }
     }
 
-    private void OnDestroy()
+    private void SaveGameProgress()
     {
-        _ballController._collisionSegment.RemoveListener(OnBallCollisonSegment);
+        PlayerPrefs.SetInt("LevelProgress:_currentLevel", _currentLevel);
+    }
+
+    private void LoadGameProgress()
+    {
+        _currentLevel = PlayerPrefs.GetInt("LevelProgress:_currentLevel", 1);
+    }
+
+    private void ResetGameProgress()
+    {
+        PlayerPrefs.DeleteAll();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

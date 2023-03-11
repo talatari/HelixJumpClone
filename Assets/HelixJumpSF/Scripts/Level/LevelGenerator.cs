@@ -11,7 +11,8 @@ public class LevelGenerator : MonoBehaviour
     [SerializeField] private int _maxTrapSegment;
 
     private int _countLevel = 1;
-    private float _floorAmount = 0.0f;
+    private int _floorAmount;
+    public int _FloorAmount => _floorAmount;
     private string _floorName = "_Floor";
     private float _lastFloorY = 0.0f;
     public float _LastFloorY => _lastFloorY;
