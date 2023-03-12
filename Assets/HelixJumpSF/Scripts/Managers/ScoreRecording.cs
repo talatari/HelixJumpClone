@@ -11,7 +11,6 @@ public class ScoreRecording : BallEvents
     {
         if (_type == SegmentType.Empty)
         {
-            //_score += _levelProgress.CurrentLevel;
             _score++;
         }
     }
