@@ -15,11 +15,13 @@ public class LevelProgress : BallEvents
 
     private void Update()
     {
+        // TO DO: delete its ipnuts
         if (Input.GetKeyDown(KeyCode.Escape) == true)
         {
             ResetGameProgress();
         }
 
+        // TO DO: delete its ipnuts
         if (Input.GetKeyDown(KeyCode.Space) == true)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
