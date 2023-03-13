@@ -4,6 +4,7 @@ using UnityEngine.SceneManagement;
 public class LevelProgress : BallEvents
 {
     private int _currentLevel = 1;
+    private int _defaultCurrentLevel = 1;
     public int CurrentLevel => _currentLevel;
 
     protected override void Awake()
@@ -39,12 +40,14 @@ public class LevelProgress : BallEvents
 
     private void SaveGameProgress()
     {
-        PlayerPrefs.SetInt("LevelProgress:_currentLevel", _currentLevel);
+        PlayerPrefs.SetInt("LevelProgress:_currentLevel",
+            _currentLevel);
     }
 
     private void LoadGameProgress()
     {
-        _currentLevel = PlayerPrefs.GetInt("LevelProgress:_currentLevel", 1);
+        _currentLevel = PlayerPrefs.GetInt("LevelProgress:_currentLevel",
+            _defaultCurrentLevel);
     }
 
     private void ResetGameProgress()

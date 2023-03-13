@@ -15,6 +15,7 @@ public class BallMovement : MonoBehaviour
     private void Start()
     {
         enabled = false;
+
         _animator = GetComponent<Animator>();
     }
 
@@ -41,13 +42,16 @@ public class BallMovement : MonoBehaviour
     public void Jump()
     {
         _animator.speed = 1;
+
         _fallSpeed = _fallSpeedDefault;
     }
 
     public void Fall(float _startFloor)
     {
         _animator.speed = 0;
+
         enabled = true;
+
         _floorY = _startFloor - _fallHeight;
     }
 

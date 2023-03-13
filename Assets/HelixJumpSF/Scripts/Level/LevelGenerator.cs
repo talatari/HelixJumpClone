@@ -30,6 +30,7 @@ public class LevelGenerator : MonoBehaviour
         for (int i = 0; i < _floorAmount; i++)
         {
             Floor _floor = Instantiate(_floorPrefab, transform);
+
             _floor.transform.Translate(0, i * _floorHeight, 0);
 
             if (i <= 9)
@@ -49,7 +50,9 @@ public class LevelGenerator : MonoBehaviour
             if (i > 0 && i < _floorAmount - 1)
             {
                 _floor.SetRandomRotation();
+
                 _floor.AddEmptySegment(_emptySegmentAmount);
+
                 _floor.AddRandomTrapSegment(Random.Range(
                     _minTrapSegment, _maxTrapSegment + 1));
             }
@@ -57,6 +60,7 @@ public class LevelGenerator : MonoBehaviour
             if (i == _floorAmount - 1)
             {
                 _floor.AddEmptySegment(_emptySegmentAmount);
+
                 _lastFloorY = _floor.transform.position.y + _indentPerFloor;
             }
         }
