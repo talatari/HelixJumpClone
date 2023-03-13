@@ -6,16 +6,16 @@ public class UIRecordScore : BallEvents
     [SerializeField] private RecordRecording _recordRecording;
     [SerializeField] private Text _recordScoreGameText;
 
-    private string _recordText = "Record: ";
+    private string _recordText;
+
+    private void Start()
+    {
+        _recordText = _recordScoreGameText.text;
+    }
 
     protected override void OnBallCollisionSegment(SegmentType _type)
     {
-        if (_type != SegmentType.Trap)
-        {
-            _recordScoreGameText.text = _recordText +
-                _recordRecording._RecordScoreGame.ToString();
-        }
-
-
+        _recordScoreGameText.text = _recordText +
+            _recordRecording._RecordScoreGame.ToString();
     }
 }

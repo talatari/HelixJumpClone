@@ -8,16 +8,18 @@ public class RecordRecording : BallEvents
     private int _recordScoreGame;
     public int _RecordScoreGame => _recordScoreGame;
 
+    private void Start()
+    {
+        LoadRecordScoreGameProgress();
+    }
+
     protected override void OnBallCollisionSegment(SegmentType _type)
     {
-        //Debug.Log($"_scoreRecording._Score = {_scoreRecording._Score}");
-        //Debug.Log($"_recordScoreGame = {_recordScoreGame}");
-
         if (_type == SegmentType.Finish)
         {
             if (_scoreRecording._Score > _recordScoreGame)
             {
-                Debug.Log("SaveRecordScoreGameProgress();");
+                _recordScoreGame = _scoreRecording._Score;
                 SaveRecordScoreGameProgress();
             }
         }
@@ -26,13 +28,15 @@ public class RecordRecording : BallEvents
     private void SaveRecordScoreGameProgress()
     {
         PlayerPrefs.SetInt(
-            "RecordScoreGame:_recordScoreGame", _recordScoreGame);
+            "RecordScoreGame:_recordScoreGame",
+            _recordScoreGame);
     }
 
     private void LoadRecordScoreGameProgress()
     {
         _recordScoreGame = PlayerPrefs.GetInt(
-            "RecordScoreGame:_recordScoreGame", 0);
+            "RecordScoreGame:_recordScoreGame",
+            0);
     }
 
     private void ResetRecordScoreGameProgress()
