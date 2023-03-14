@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class ColorGenerator : MonoBehaviour
 {
-    [SerializeField] private Material _axis_mat;
-    [SerializeField] private Material _ball_mat;
-    [SerializeField] private Material _default_segment;
-    [SerializeField] private Material _finish_segment;
-    [SerializeField] private Material _trap_segment;
+    [SerializeField] private Material _axisMaterial;
+    [SerializeField] private Material _ballMaterial;
+    [SerializeField] private Material _defaultMaterial;
+    [SerializeField] private Material _finishMaterial;
+    [SerializeField] private Material _trapMaterial;
 
     private Material _randomMaterial;
     private List<Material> _materials;

@@ -353,6 +353,7 @@ GameObject:
   - component: {fileID: 1846353204}
   - component: {fileID: 1846353205}
   - component: {fileID: 1846353206}
+  - component: {fileID: 1846353207}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -446,6 +447,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _ballController: {fileID: 1348098340}
   _scoreRecording: {fileID: 1846353204}
+--- !u!114 &1846353207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1846353200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1885b7dea065f4357aad9d9f09f1a3fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _axisMaterial: {fileID: 2100000, guid: 550c1f4d85eaf48348b309c44741e2f7, type: 2}
+  _ballMaterial: {fileID: 2100000, guid: ffbbe9143ff0f41ac955df2399e71927, type: 2}
+  _defaultMaterial: {fileID: 2100000, guid: d7cf994a5d73040e88364b797bb1dbb5, type: 2}
+  _finishMaterial: {fileID: 2100000, guid: fbc4696a283a94c989b33c0d01bc954c, type: 2}
+  _trapMaterial: {fileID: 2100000, guid: be98004ef16d746ff9b679f06ba125f5, type: 2}
 --- !u!1001 &6907243181681192697
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -453,10 +471,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3088597902057553950, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: _fallHeight
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6907243180960391066, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -504,34 +518,6 @@ PrefabInstance:
     - target: {fileID: 6907243180960391067, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
       propertyPath: m_Name
       value: Ball
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243180960391068, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_UseGravity
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243180960391068, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_AngularDrag
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243181796066184, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_Name
-      value: MainCamera
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243181796066186, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_ClearFlags
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243181796066186, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_BackGroundColor.b
-      value: 0.4745098
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243181796066186, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_BackGroundColor.g
-      value: 0.3019608
-      objectReference: {fileID: 0}
-    - target: {fileID: 6907243181796066186, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}
-      propertyPath: m_BackGroundColor.r
-      value: 0.19215687
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e63e9761d767a48e18b20d8b566854b4, type: 3}

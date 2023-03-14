@@ -15,32 +15,27 @@ public class Segment : MonoBehaviour
     [SerializeField] private Material _axisMaterial;
     [SerializeField] private Material _ballMaterial;
     [SerializeField] private Material _defaultMaterial;
+
     [SerializeField] private Material _finishMaterial;
     [SerializeField] private Material _trapMaterial;
     [SerializeField] private SegmentType _type;
 
     public SegmentType Type => _type;
     private MeshRenderer _meshRenderer;
-    private ColorGenerator _colorGenerator;
-    private List<Material> _materials;
+
     private Material _randomMaterial;
+    private List<Material> _materials;
 
     private void Awake()
     {
         _meshRenderer = GetComponent<MeshRenderer>();
-
-        _materials.Add(_axisMaterial);
-        _materials.Add(_ballMaterial);
-        _materials.Add(_defaultMaterial);
-        _materials.Add(_finishMaterial);
-        _materials.Add(_trapMaterial);
     }
 
     public void SetTrap()
     {
         _meshRenderer.enabled = true;
-        _meshRenderer.material = _trapMaterial;
-        //_meshRenderer.material = GetMaterial();
+        //_meshRenderer.material = _trapMaterial;
+        _meshRenderer.material = GetMaterial();
 
         _type = SegmentType.Trap;
     }
@@ -56,12 +51,11 @@ public class Segment : MonoBehaviour
     {
         _meshRenderer.enabled = true;
         _meshRenderer.material = _finishMaterial;
-        //_meshRenderer.material = GetMaterial();
 
         _type = SegmentType.Finish;
     }
 
-    private Material GetMaterial()
+    public Material GetMaterial()
     {
         if (_materials.Count > 0)
         {
