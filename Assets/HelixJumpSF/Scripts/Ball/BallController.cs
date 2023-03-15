@@ -15,9 +15,7 @@ public class BallController : OnColliderTrigger
     
     protected override void OnOneTriggerEnter(Collider _other)
     {
-        Segment _segment = _other.GetComponent<Segment>();
-
-        if (_segment != null)
+        if (_other.TryGetComponent(out Segment _segment))
         {
             if (_segment.Type == SegmentType.Empty)
             {
