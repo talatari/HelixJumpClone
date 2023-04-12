@@ -12,7 +12,7 @@ public class BallController : OnColliderTrigger
     {
         _ballMovement = GetComponent<BallMovement>();
     }
-    
+
     protected override void OnOneTriggerEnter(Collider _other)
     {
         if (_other.TryGetComponent(out Segment _segment))
@@ -36,4 +36,6 @@ public class BallController : OnColliderTrigger
             _collisionSegment.Invoke(_segment.Type);
         }
     }
+
+
 }
