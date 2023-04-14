@@ -32,8 +32,7 @@ public class BallMovement : MonoBehaviour
         }
         else
         {
-            transform.position = new Vector3(
-                transform.position.x, _floorY, transform.position.z);
+            transform.position = new Vector3(transform.position.x, _floorY, transform.position.z);
 
             enabled = false;
         }
@@ -59,4 +58,6 @@ public class BallMovement : MonoBehaviour
     {
         _animator.speed = 0;
     }
+
+
 }

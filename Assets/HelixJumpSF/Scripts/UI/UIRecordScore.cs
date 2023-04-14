@@ -15,7 +15,8 @@ public class UIRecordScore : BallEvents
 
     protected override void OnBallCollisionSegment(SegmentType _type)
     {
-        _recordScoreGameText.text = _recordText +
-            _recordRecording._RecordScoreGame.ToString();
+        _recordScoreGameText.text = _recordText + _recordRecording._RecordScoreGame.ToString();
     }
+
+
 }

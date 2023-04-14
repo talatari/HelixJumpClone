@@ -9,10 +9,9 @@ public class MouseRotator : MonoBehaviour
     {
         if (Input.GetMouseButton(0) == true)
         {
-            transform.Rotate(
-                0,
-                Input.GetAxis(_mouseInputAxis) * _sensitive * -1,
-                0);
+            transform.Rotate(0, Input.GetAxis(_mouseInputAxis) * _sensitive * -1, 0);
         }
     }
+
+
 }

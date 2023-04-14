@@ -33,4 +33,6 @@ public class UIGamePanel : BallEvents
             _recordPanel.SetActive(false);
         }
     }
+
+
 }

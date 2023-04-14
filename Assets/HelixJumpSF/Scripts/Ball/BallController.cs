@@ -27,8 +27,7 @@ public class BallController : OnColliderTrigger
                 _ballMovement.Jump();
             }
 
-            if (_segment.Type == SegmentType.Trap ||
-                _segment.Type == SegmentType.Finish)
+            if (_segment.Type == SegmentType.Trap || _segment.Type == SegmentType.Finish)
             {
                 _ballMovement.Stop();
             }

@@ -25,7 +25,6 @@ public class Floor : MonoBehaviour
             int _index = Random.Range(0, _defaultSegments.Count);
 
             _defaultSegments[_index].SetTrap();
-
             _defaultSegments.RemoveAt(_index);
         }
     }
@@ -42,4 +41,6 @@ public class Floor : MonoBehaviour
             _defaultSegments[i].SetFinish();
         }
     }
+
+
 }

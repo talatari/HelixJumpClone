@@ -38,14 +38,12 @@ public class LevelProgress : BallEvents
 
     private void SaveGameProgress()
     {
-        PlayerPrefs.SetInt("LevelProgress:_currentLevel",
-            _currentLevel);
+        PlayerPrefs.SetInt("LevelProgress:_currentLevel", _currentLevel);
     }
 
     private void LoadGameProgress()
     {
-        _currentLevel = PlayerPrefs.GetInt("LevelProgress:_currentLevel",
-            _defaultCurrentLevel);
+        _currentLevel = PlayerPrefs.GetInt("LevelProgress:_currentLevel", _defaultCurrentLevel);
     }
 
     private void ResetGameProgress()
@@ -54,4 +52,6 @@ public class LevelProgress : BallEvents
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
 }

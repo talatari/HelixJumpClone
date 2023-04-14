@@ -14,4 +14,6 @@ public class ScoreRecording : BallEvents
             _score++;
         }
     }
+
+
 }

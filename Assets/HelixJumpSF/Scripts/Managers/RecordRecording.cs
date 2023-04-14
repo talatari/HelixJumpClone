@@ -27,16 +27,12 @@ public class RecordRecording : BallEvents
 
     private void SaveRecordScoreGameProgress()
     {
-        PlayerPrefs.SetInt(
-            "RecordScoreGame:_recordScoreGame",
-            _recordScoreGame);
+        PlayerPrefs.SetInt("RecordScoreGame:_recordScoreGame", _recordScoreGame);
     }
 
     private void LoadRecordScoreGameProgress()
     {
-        _recordScoreGame = PlayerPrefs.GetInt(
-            "RecordScoreGame:_recordScoreGame",
-            0);
+        _recordScoreGame = PlayerPrefs.GetInt("RecordScoreGame:_recordScoreGame", 0);
     }
 
     private void ResetRecordScoreGameProgress()
@@ -45,4 +41,6 @@ public class RecordRecording : BallEvents
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+
 }

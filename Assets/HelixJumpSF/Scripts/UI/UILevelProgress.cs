@@ -26,7 +26,7 @@ public class UILevelProgress : BallEvents
     {
         if (_type == SegmentType.Empty || _type == SegmentType.Finish)
         {
-            _fillStep = 1 / ((float) _levelGenerator._FloorAmount - 1);
+            _fillStep = 1 / ((float)_levelGenerator._FloorAmount - 1);
 
             _progressBar.fillAmount += _fillStep;
 
@@ -40,4 +40,6 @@ public class UILevelProgress : BallEvents
 
         _textPercentsProgressBar.text = _fillPercent.Split('.')[0] + "%";
     }
+
+
 }
