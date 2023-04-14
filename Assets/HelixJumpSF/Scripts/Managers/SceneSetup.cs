@@ -11,9 +11,9 @@ public class SceneSetup : MonoBehaviour
         _levelGenerator.GenerateLevel(_levelProgress.CurrentLevel);
 
         _ballController.transform.position = new Vector3(
-            _ballController.transform.position.x,
-            _levelGenerator._LastFloorY,
-            _ballController.transform.position.z);
+            _ballController.transform.position.x, _levelGenerator._LastFloorY, _ballController.transform.position.z);
 
     }
+
+
 }

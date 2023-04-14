@@ -15,4 +15,6 @@ public abstract class BallEvents : MonoBehaviour
     }
 
     protected virtual void OnBallCollisionSegment(SegmentType _type) { }
+
+
 }

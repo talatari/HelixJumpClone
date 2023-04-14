@@ -24,8 +24,7 @@ public class LevelGenerator : MonoBehaviour
 
         _floorAmount = _defaultFloorAmount + _countLevel;
 
-        _axis.transform.localScale = new Vector3(
-            1, _floorAmount * _floorHeight + _floorHeight, 1);
+        _axis.transform.localScale = new Vector3(1, _floorAmount * _floorHeight + _floorHeight, 1);
 
         for (int i = 0; i < _floorAmount; i++)
         {
@@ -50,11 +49,8 @@ public class LevelGenerator : MonoBehaviour
             if (i > 0 && i < _floorAmount - 1)
             {
                 _floor.SetRandomRotation();
-
                 _floor.AddEmptySegment(_emptySegmentAmount);
-
-                _floor.AddRandomTrapSegment(Random.Range(
-                    _minTrapSegment, _maxTrapSegment + 1));
+                _floor.AddRandomTrapSegment(Random.Range(_minTrapSegment, _maxTrapSegment + 1));
             }
 
             if (i == _floorAmount - 1)
@@ -78,4 +74,6 @@ public class LevelGenerator : MonoBehaviour
             Destroy(transform.GetChild(i).gameObject);
         }
     }
+
+
 }

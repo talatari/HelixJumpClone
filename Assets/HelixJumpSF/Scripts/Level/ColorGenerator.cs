@@ -29,4 +29,6 @@ public class ColorGenerator : MonoBehaviour
         _trapMaterial.color = _levelPallete[_index].TrapSegmentColor;
         _finishMaterial.color = _levelPallete[_index].FinishSegmentColor;
     }
+
+
 }

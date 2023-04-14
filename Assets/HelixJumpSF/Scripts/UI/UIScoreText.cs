@@ -13,4 +13,6 @@ public class UIScoreText : BallEvents
             _scoreText.text = _scoreRecording._Score.ToString();
         }
     }
+
+
 }

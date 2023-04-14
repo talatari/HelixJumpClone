@@ -46,4 +46,6 @@ public class Segment : MonoBehaviour
 
         _type = SegmentType.Finish;
     }
+
+
 }

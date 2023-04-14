@@ -25,4 +25,6 @@ public abstract class OnColliderTrigger : MonoBehaviour
             _lastCollider = null;
         }
     }
+
+
 }
